@@ -12,6 +12,10 @@ data class SuperHeroeResponse(  //busqueda por nombre
 data class SuperHero( //busqueda por id
     @SerializedName("response") val response: String,
     @SerializedName("id") val id: String,
-    @SerializedName("name") val name: String
+    @SerializedName("name") val name: String,
+    @SerializedName("image") val image: Image
 )
 {}
+data class Image(
+   @SerializedName("url") val url: String
+){}
