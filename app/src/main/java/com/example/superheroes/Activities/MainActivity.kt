@@ -1,19 +1,25 @@
-package com.example.superheroes
+package com.example.superheroes.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
+import com.example.superheroes.R
+import com.example.superheroes.databinding.ActivityListBinding
 import com.example.superheroes.utils.RetrofitProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+
+        binding= ActivityListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
 
     }
