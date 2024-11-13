@@ -12,39 +12,31 @@
         android:id="@+id/CardViewSuperHero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardElevation="16dp"
         app:cardCornerRadius="16dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/TextViewTittleSH"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/heroImageView"
-                tools:text="SuperHeroes">
-
-            </TextView>
 
             <ImageView
                 android:id="@+id/heroImageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/TextViewTittleSH"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:scaleType="centerCrop"
                 android:src="@drawable/bat">
 
             </ImageView>
 
+            <TextView
+                android:id="@+id/TextViewTittleSH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="SuperHeroes"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_alignParentBottom="true"
+                android:background="@color/txt_background"
+                android:textColor="@color/black"
+                android:textSize="15sp">
 
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </TextView>
 
     </androidx.cardview.widget.CardView>
 
