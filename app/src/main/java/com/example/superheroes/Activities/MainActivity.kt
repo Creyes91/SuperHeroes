@@ -1,15 +1,18 @@
 package com.example.superheroes.Activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.superheroes.Adapters.SuperheroAdapter
 import com.example.superheroes.R
 import com.example.superheroes.data.SuperHero
 import com.example.superheroes.databinding.ActivityMainBinding
-
 import com.example.superheroes.utils.RetrofitProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         adapter= SuperheroAdapter(superHeroList) {position->
 
             val superHero= superHeroList[position]
-           // navigateTo(superHero)
+            navigateTo(superHero)
 
         }
         binding.mainReciclerView.adapter= adapter
@@ -40,11 +43,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-  /*  private fun navigateTo(superHero: SuperHero)
-    {
-        val intent = Intent
+    private fun navigateTo(superHero: SuperHero) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.SuperHero_ID, superHero.id)
+        val vista = findViewById<ImageView>(R.id.heroImageView)
+        //intent.putExtra(DetailActivity.EXTRA_CONTACT, contact);
 
-    }*/
+    //    val  options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,vista,"Profile")
+                startActivity(intent)
+
+    }
+
+
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -80,7 +90,8 @@ class MainActivity : AppCompatActivity() {
 
             CoroutineScope(Dispatchers.Main).launch {
                 if (result.response== "success")
-                    adapter.updatesItems(result.results)
+                { superHeroList= result.results
+                    adapter.updatesItems(result.results)}
 
 
 

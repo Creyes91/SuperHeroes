@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_today"
+        android:enabled="true"
+        android:title="Stats"/>
+    <item
+        android:id="@+id/item_thisWeek"
+        android:enabled="true"
+        android:title="data"/>
+    <item
+        android:id="@+id/item_thisMonth"
+        android:enabled="true"
+        android:title="data"/>
+</menu>

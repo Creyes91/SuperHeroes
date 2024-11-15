@@ -11,5 +11,5 @@ import retrofit2.http.Query
 interface SuperHeroeService {
 
     @GET("search/{name}") suspend fun findSuperheroesByName(@Path("name") query: String): SuperHeroeResponse
-    @GET("character-id") suspend fun findSuperheroesById (@Path("character-id") query: String): SuperHero
+    @GET("{character-id}") suspend fun findSuperheroesById (@Path("character-id") query: String): SuperHero
 }

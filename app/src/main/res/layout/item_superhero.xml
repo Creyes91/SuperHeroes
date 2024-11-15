@@ -19,6 +19,7 @@
                 android:id="@+id/heroImageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:transitionName="profile"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bat">
 
